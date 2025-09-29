@@ -1,17 +1,17 @@
 :root {
-    --bg: #0a0e13;
-    --bg-alt: #111821;
-    --bg-soft: #1a222e;
-    --border: #2a3441;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-    --text-light: #cbd5e1;
-    --accent: #3b82f6;
-    --accent-hover: #2563eb;
-    --accent-soft: #1e40af;
-    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --font: 'IBM Plex Mono', SFMono-Regular, Consolas, Menlo, monospace;
-    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bg: #1d2021;
+    --bg-alt: #282828;
+    --bg-soft: #3c3836;
+    --border: #504945;
+    --text: #ebdbb2;
+    --text-muted: #a89984;
+    --text-light: #d5c4a1;
+    --accent: #83a598;
+    --accent-hover: #8ec07c;
+    --accent-soft: #689d6a;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --font: 'Fira Code', 'FiraCode Nerd Font', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    --font-sans: 'Fira Code', 'FiraCode Nerd Font', ui-monospace, monospace;
 }
 
 * {
@@ -25,13 +25,14 @@ html {
 }
 
 body {
-    font-family: var(--font-sans);
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    font-family: var(--font);
+    background: linear-gradient(135deg, #1d2021 0%, #282828 100%);
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga' 1, 'calt' 1;
 }
 
 a {
@@ -82,7 +83,7 @@ a:focus {
     color: var(--text);
     font-weight: 600;
     letter-spacing: -0.025em;
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 .nav-menu {
@@ -98,14 +99,14 @@ a:focus {
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
     transition: all 0.2s ease;
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .nav-link.active {
     color: var(--text);
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(131, 165, 152, 0.15);
 }
 
 .nav-link.external {
@@ -137,10 +138,10 @@ a:focus {
 
 /* === Terminal Window === */
 .terminal-window {
-    background: rgba(17, 24, 33, 0.6);
+    background: rgba(40, 40, 40, 0.8);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: var(--shadow);
     overflow: hidden;
     position: relative;
@@ -161,8 +162,8 @@ a:focus {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 1.25rem;
-    background: rgba(8, 12, 18, 0.8);
+    padding: 0.75rem 1rem;
+    background: rgba(29, 32, 33, 0.95);
     border-bottom: 1px solid var(--border);
     font-size: 0.875rem;
     color: var(--text-muted);
@@ -176,9 +177,9 @@ a:focus {
     border-radius: 50%;
 }
 
-.terminal-dot.red { background: #ff5f56; }
-.terminal-dot.amber { background: #ffbd2e; }
-.terminal-dot.green { background: #27c93f; }
+.terminal-dot.red { background: #fb4934; }
+.terminal-dot.amber { background: #fabd2f; }
+.terminal-dot.green { background: #b8bb26; }
 
 .terminal-path {
     margin-left: 0.75rem;
@@ -209,7 +210,7 @@ a:focus {
     font-size: 3.5rem;
     font-weight: 700;
     color: var(--text);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     margin: 0;
     letter-spacing: -0.025em;
 }
@@ -218,7 +219,7 @@ a:focus {
     font-size: 1.25rem;
     color: var(--text-light);
     margin: 1rem 0 2rem;
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 #typed-name::after {
@@ -237,17 +238,17 @@ a:focus {
 
 .expertise-item {
     padding: 1rem 1.25rem;
-    background: rgba(59, 130, 246, 0.05);
-    border: 1px solid rgba(59, 130, 246, 0.1);
-    border-radius: 8px;
+    background: rgba(131, 165, 152, 0.08);
+    border: 1px solid rgba(131, 165, 152, 0.15);
+    border-radius: 6px;
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     transition: all 0.2s ease;
 }
 
 .expertise-item:hover {
-    background: rgba(59, 130, 246, 0.08);
-    border-color: rgba(59, 130, 246, 0.2);
+    background: rgba(131, 165, 152, 0.12);
+    border-color: rgba(131, 165, 152, 0.25);
     transform: translateY(-2px);
 }
 
@@ -263,10 +264,10 @@ a:focus {
     align-items: center;
     justify-content: center;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 0.95rem;
     font-weight: 500;
-    font-family: var(--font-sans);
+    font-family: var(--font);
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
@@ -291,7 +292,7 @@ a:focus {
 }
 
 .btn-secondary:hover {
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(131, 165, 152, 0.15);
     border-color: var(--accent);
     color: var(--text);
     transform: translateY(-1px);
@@ -319,7 +320,7 @@ a:focus {
     font-size: 0.875rem;
     color: var(--text-muted);
     margin-top: 0.5rem;
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 /* === About === */
@@ -372,7 +373,7 @@ a:focus {
     color: var(--text);
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    font-family: var(--font-sans);
+    font-family: var(--font);
     font-weight: 600;
 }
 
@@ -384,18 +385,18 @@ a:focus {
 
 .skill-tag {
     padding: 0.5rem 0.75rem;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    border-radius: 6px;
+    background: rgba(131, 165, 152, 0.1);
+    border: 1px solid rgba(131, 165, 152, 0.2);
+    border-radius: 4px;
     font-size: 0.875rem;
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     transition: all 0.2s ease;
 }
 
 .skill-tag:hover {
-    background: rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.3);
+    background: rgba(131, 165, 152, 0.15);
+    border-color: rgba(131, 165, 152, 0.3);
     transform: translateY(-1px);
 }
 
@@ -407,16 +408,16 @@ a:focus {
 
 .portfolio-entry {
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid var(--border);
-    background: rgba(12, 18, 26, 0.4);
+    background: rgba(29, 32, 33, 0.5);
     backdrop-filter: blur(8px);
     transition: all 0.2s ease;
 }
 
 .portfolio-entry:hover {
     transform: translateY(-2px);
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: rgba(131, 165, 152, 0.4);
     box-shadow: var(--shadow);
 }
 
@@ -437,14 +438,14 @@ a:focus {
 .portfolio-entry h3 {
     font-size: 1.25rem;
     color: var(--text);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     font-weight: 600;
     margin: 0;
 }
 
 .portfolio-entry p {
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     line-height: 1.6;
 }
 
@@ -458,12 +459,12 @@ a:focus {
 
 .tech-stack li {
     padding: 0.4rem 0.75rem;
-    border-radius: 6px;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 4px;
+    background: rgba(131, 165, 152, 0.1);
+    border: 1px solid rgba(131, 165, 152, 0.2);
     font-size: 0.875rem;
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 .project-links {
@@ -474,7 +475,7 @@ a:focus {
 
 .project-link {
     color: var(--accent);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     font-weight: 500;
 }
 
@@ -484,7 +485,7 @@ a:focus {
 
 .project-link-disabled {
     color: var(--text-muted);
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 /* === Experience === */
@@ -496,8 +497,8 @@ a:focus {
 
 .experience-entry {
     padding: 2rem;
-    border-radius: 12px;
-    background: rgba(12, 18, 26, 0.4);
+    border-radius: 8px;
+    background: rgba(29, 32, 33, 0.5);
     border-left: 3px solid var(--accent);
     backdrop-filter: blur(8px);
 }
@@ -517,7 +518,7 @@ a:focus {
 .experience-entry h3 {
     font-size: 1.1rem;
     color: var(--text);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     font-weight: 600;
     margin: 0 0 0.25rem;
 }
@@ -525,12 +526,12 @@ a:focus {
 .experience-company {
     font-size: 0.95rem;
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 .experience-entry > p {
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     line-height: 1.6;
 }
 
@@ -538,7 +539,7 @@ a:focus {
     margin: 1rem 0 0;
     padding-left: 1.25rem;
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     line-height: 1.6;
 }
 
@@ -556,14 +557,14 @@ a:focus {
 .contact-info h2 {
     font-size: 1.5rem;
     color: var(--text);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     font-weight: 600;
     margin: 0 0 1rem;
 }
 
 .contact-info p {
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     line-height: 1.6;
 }
 
@@ -586,7 +587,7 @@ a:focus {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text-muted);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     font-weight: 500;
 }
 
@@ -600,18 +601,18 @@ a:focus {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-light);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     margin-bottom: 0.5rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-    background: rgba(15, 21, 28, 0.6);
+    background: rgba(29, 32, 33, 0.6);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 0.75rem 1rem;
     color: var(--text);
-    font-family: var(--font-sans);
+    font-family: var(--font);
     transition: all 0.2s ease;
 }
 
@@ -619,7 +620,7 @@ a:focus {
 .contact-form textarea:focus {
     border-color: var(--accent);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(131, 165, 152, 0.15);
 }
 
 .contact-form textarea {
@@ -630,7 +631,7 @@ a:focus {
 .terminal-footer {
     padding: 3rem 1.25rem;
     border-top: 1px solid var(--border);
-    background: rgba(8, 12, 18, 0.8);
+    background: rgba(29, 32, 33, 0.9);
     backdrop-filter: blur(12px);
 }
 
@@ -639,7 +640,7 @@ a:focus {
     flex-direction: column;
     gap: 1rem;
     color: var(--text-muted);
-    font-family: var(--font-sans);
+    font-family: var(--font);
 }
 
 .footer-links {
