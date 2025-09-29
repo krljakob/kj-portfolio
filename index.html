@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl Jakob — Portfolio Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="terminal-theme">
+    <nav class="terminal-nav">
+        <div class="nav-inner">
+            <a href="#home" class="brand">~/karl-jakob</a>
+            <button class="nav-toggle" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">home</a></li>
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#skills" class="nav-link">skills</a></li>
+                <li><a href="#portfolio" class="nav-link">work</a></li>
+                <li><a href="#experience" class="nav-link">experience</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+                <li><a href="https://github.com/krljakob" class="nav-link external" target="_blank" rel="noopener">github ↗</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section hero">
+            <div class="container">
+                <div class="terminal-window hero-terminal" data-title="~">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-path">karl@portfolio:~</span>
+                        <a href="https://github.com/krljakob" target="_blank" rel="noopener" class="terminal-link">github ↗</a>
+                    </div>
+                    <div class="terminal-body hero-body">
+                        <h1 class="hero-name" id="typed-name" data-text="Karl Jakob">Karl Jakob</h1>
+                        <p class="hero-tagline">Full-stack developer shipping thoughtful experiences</p>
+                        <div class="expertise-grid">
+                            <div class="expertise-item">Product-led UI engineering</div>
+                            <div class="expertise-item">Modern TypeScript & Node tooling</div>
+                            <div class="expertise-item">Design systems + accessible UX</div>
+                            <div class="expertise-item">Cloud-native deployment pipelines</div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#portfolio" class="btn btn-primary">View Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                        </div>
+                        <div class="hero-contact">
+                            <a href="mailto:kjakob8@gmail.com" class="contact-link">kjakob8@gmail.com</a>
+                            <a href="https://github.com/krljakob" target="_blank" rel="noopener" class="contact-link">github.com/krljakob</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="terminal-window" data-title="about.md">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-path">karl@portfolio:~</span>
+                        <span class="file-indicator">about.md</span>
+                    </div>
+                    <div class="terminal-body about-body">
+                        <div class="about-text">
+                            <p>
+                                Highly motivated full stack developer with focus on building sleek, performant dev tools and applications.
+                                Primary expertise in Python with adaptability across Rust, TypeScript and Javascript.
+                                Passionate about exploring new languages and software tools with a strong focus on performance optimization, testing and benchmarking.
+                            </p>
+                            <p>
+                                I specialize in distributed systems, decentralized applications, and developer tooling.
+                                From automated trading systems to hybrid Rust/Python architectures, I enjoy building high-performance
+                                solutions that scale and deliver real value.
+                            </p>
+                        </div>
+                        <div class="about-meta">
+                            <dl>
+                                <div>
+                                    <dt>email</dt>
+                                    <dd><a href="mailto:kjakob8@gmail.com">kjakob8@gmail.com</a></dd>
+                                </div>
+                                <div>
+                                    <dt>location</dt>
+                                    <dd>Boynton Beach, Florida, United States</dd>
+                                </div>
+                                <div>
+                                    <dt>background</dt>
+                                    <dd>Currently enrolled at Florida International University, B.A. Computer Science (Expected Dec 2026)</dd>
+                                </div>
+                            </dl>
+                            <p class="terminal-note">Seeking opportunities to join a growing team and contribute to innovation and scale at forward-thinking organizations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="terminal-window" data-title="skills.toml">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-path">karl@portfolio:~</span>
+                        <span class="file-indicator">skills.toml</span>
+                    </div>
+                    <div class="terminal-body skills-body">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>Languages</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Rust</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Specializations</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Full Stack Development</span>
+                                    <span class="skill-tag">Distributed Systems</span>
+                                    <span class="skill-tag">Web Development</span>
+                                    <span class="skill-tag">Performance Optimization</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Tools & Architecture</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Web3.py</span>
+                                    <span class="skill-tag">Hybrid System Design</span>
+                                    <span class="skill-tag">Asynchronous Programming</span>
+                                    <span class="skill-tag">HTML/CSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <div class="terminal-window" data-title="projects.log">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-path">karl@portfolio:~</span>
+                        <span class="file-indicator">projects.log</span>
+                    </div>
+                    <div class="terminal-body portfolio-body">
+                        <article class="portfolio-entry">
+                            <header>
+                                <span class="project-year">2024</span>
+                                <h3>RAGnificent</h3>
+                            </header>
+                            <p>Advanced RAG (Retrieval-Augmented Generation) system for intelligent document processing and knowledge extraction.</p>
+                            <ul class="tech-stack">
+                                <li>Python</li>
+                                <li>LangChain</li>
+                                <li>Vector DB</li>
+                                <li>FastAPI</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/krljakob/RAGnificent" class="project-link" target="_blank" rel="noopener">View Source</a>
+                            </div>
+                        </article>
+                        <article class="portfolio-entry">
+                            <header>
+                                <span class="project-year">2023</span>
+                                <h3>CC Prompts</h3>
+                            </header>
+                            <p>Curated collection of high-quality prompts for Claude Code, designed to enhance developer productivity and code quality.</p>
+                            <ul class="tech-stack">
+                                <li>Claude Code</li>
+                                <li>Prompt Engineering</li>
+                                <li>Developer Tools</li>
+                                <li>Documentation</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ursisterbtw/ccprompts" class="project-link" target="_blank" rel="noopener">View Source</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="terminal-window" data-title="experience.txt">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-path">karl@portfolio:~</span>
+                        <span class="file-indicator">experience.txt</span>
+                    </div>
+                    <div class="terminal-body experience-body">
+                        <article class="experience-entry">
+                            <header>
+                                <div class="experience-period">Nov 2022 — present</div>
+                                <h3>Software Developer</h3>
+                                <div class="experience-company">Self Employed</div>
+                            </header>
+                            <p>Developing automated, asynchronous trading applications for decentralized platforms with focus on scalability and performance.</p>
+                            <ul>
+                                <li>Developed automated, asynchronous trading application for decentralized platforms.</li>
+                                <li>Leveraged Python for API integration and financial automation systems.</li>
+                                <li>Designed and maintained scalable solutions for distributed financial applications.</li>
+                            </ul>
+                        </article>
+                        <article class="experience-entry">
+                            <header>
+                                <div class="experience-period">Aug 2022 — Aug 2023</div>
+                                <h3>Web Developer</h3>
+                                <div class="experience-company">Toy Mories (Freelance)</div>
+                            </header>
+                            <p>Full-cycle web development from concept to deployment for technology industry client.</p>
+                            <ul>
+                                <li>Designed, developed, deployed and maintained website for technology industry client.</li>
+                                <li>Full-cycle web development from concept to deployment.</li>
+                                <li>Managed ongoing maintenance and optimization of web applications.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="terminal-window" data-title="contact.sh">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-path">karl@portfolio:~</span>
+                        <span class="file-indicator">contact.sh</span>
+                    </div>
+                    <div class="terminal-body contact-body">
+                        <div class="contact-info">
+                            <p><a href="mailto:kjakob8@gmail.com">kjakob8@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="terminal-footer">
+        <div class="container">
+            <p>&copy; 2025 Karl Jakob. Built with intention.</p>
+            <div class="footer-links">
+                <a href="https://github.com/krljakob" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+                <a href="mailto:kjakob8@gmail.com" class="footer-link">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
