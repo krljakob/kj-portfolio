@@ -275,27 +275,30 @@ a:focus {
 }
 
 .btn-primary {
-    background: var(--accent);
-    color: white;
+    background: #50fa7b;
+    color: #282a36;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background: var(--accent-hover);
+    background: #5af78e;
     transform: translateY(-1px);
-    color: white;
+    box-shadow: 0 4px 12px rgba(80, 250, 123, 0.3);
+    color: #282a36;
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--text-light);
-    border: 1px solid var(--border);
+    border: 1px solid #ffb86c;
 }
 
 .btn-secondary:hover {
-    background: rgba(131, 165, 152, 0.15);
-    border-color: var(--accent);
-    color: var(--text);
+    background: #ffb86c;
+    border-color: #ffb86c;
+    color: #282a36;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 184, 108, 0.2);
 }
 
 .hero-contact {
