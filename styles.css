@@ -94,7 +94,7 @@ a:focus {
 }
 
 .nav-link {
-    color: var(--text-muted);
+    color: #a0aac4;
     font-size: 0.95rem;
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
@@ -659,6 +659,18 @@ a:focus {
 
 .footer-link:hover {
     color: var(--accent);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 @keyframes blink {

@@ -32,14 +32,24 @@ navLinks.forEach(link => {
 
 const setActiveNav = () => {
     let activeId = sections[0]?.id;
-    const offset = window.scrollY + 160;
+    const scrollY = window.scrollY;
 
-    sections.forEach(section => {
-        if (offset >= section.offsetTop) {
+    // batch DOM reads
+    const sectionOffsets = sections.map(section => ({
+        id: section.id,
+        top: section.offsetTop
+    }));
+
+    const offset = scrollY + 160;
+
+    // determine active section
+    sectionOffsets.forEach(section => {
+        if (offset >= section.top) {
             activeId = section.id;
         }
     });
 
+    // batch DOM writes
     navLookup.forEach(link => link.classList.remove('active'));
 
     if (activeId && navLookup.has(activeId)) {
