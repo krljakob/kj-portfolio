@@ -158,3 +158,30 @@ Edit CSS variables in `styles.css:1-15`. Current theme is Gruvbox-inspired dark 
 ## Deployment
 
 Configured for Vercel deployment (`.vercelignore` present). No build step required - deploys directly.
+
+## Development Guidelines
+
+**Code Style:**
+- Use four-space indentation across HTML, CSS, and JavaScript
+- Double quotes for HTML attributes, single quotes in JavaScript
+- Lowercase, hyphenated CSS class names (e.g., `terminal-window`, `hero-actions`)
+- Keep section markup aligned with existing terminal-window scaffolding
+
+**Testing Workflow:**
+- Manual testing in Chrome and Firefox
+- Test hamburger menu below 860px breakpoint
+- Verify scroll-spy link highlighting
+- Check hero typing animation
+- Test IntersectionObserver reveals by slow scrolling
+- For environments lacking IntersectionObserver, temporarily add `.visible` class
+
+**Commit Standards:**
+- Follow Conventional Commit format: `<type>(scope): description`
+- Examples: `style(ui): refine hero spacing`, `feat(nav): add mobile menu`
+- Rebase onto `main` before opening PRs
+- Include screenshots in PRs for visual changes
+
+**Files Excluded from Deployment:**
+- `CLAUDE.md` (development guidelines)
+- `AGENTS.md` (internal documentation)
+- `resume.md` (source content only)
