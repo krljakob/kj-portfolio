@@ -50,7 +50,9 @@ Every section uses a repeating terminal window structure:
 All sections (#home, #about, #skills, #portfolio, #experience, #contact) follow this pattern.
 
 ### CSS Architecture
-**Design System (`styles.css:1-15`):**
+**Design System:**
+- Dark theme variables: `styles.css:1-52`
+- Light theme variables: `styles.css:54-102`
 - Gruvbox-inspired color scheme in CSS custom properties
 - All colors, spacing, fonts defined in `:root`
 - Modify theme by changing CSS variables
@@ -68,14 +70,27 @@ All sections (#home, #about, #skills, #portfolio, #experience, #contact) follow 
 - 520px: Compact mobile spacing
 
 ### JavaScript Architecture (`script.js`)
-**Navigation (`script.js:23-51`):**
-- Scroll-spy using scroll offset calculation
+
+**Theme Toggle (`script.js:1-26`):**
+- Dark/light mode with localStorage persistence
+- Respects `prefers-color-scheme` media query
+- Theme stored in localStorage for persistence
+- Animated moon/sun icons with rotation transitions
+
+**Navigation (`script.js:28-108`):**
+- Scroll-spy using cached section offsets
 - Hash-based navigation with smooth scrolling
 - Hamburger menu with `aria-expanded` state
 
+**Performance Optimizations:**
+- **Cached Section Offsets** (`script.js:61-72`): Avoids forced reflows during scroll
+- **Passive Event Listeners** (`script.js:106,108`): Improves scroll performance
+- **Resize Debouncing** (`script.js:99-106`): Only recalculates on width changes >5px
+- **Batch DOM Reads** (`script.js:66-71`): Uses requestAnimationFrame for layout reads
+
 **Animations:**
-- Typing animation: Hero name character-by-character (`script.js:53-69`)
-- Reveal animations: `IntersectionObserver` triggers `.visible` class when terminal windows enter viewport (`script.js:89-107`)
+- Typing animation: Hero name character-by-character (`script.js:110-126`)
+- Reveal animations: `IntersectionObserver` triggers `.visible` class when terminal windows enter viewport with 15% threshold (`script.js:128-146`)
 
 ## Common Edits
 
@@ -116,18 +131,30 @@ Edit CSS variables in `styles.css:1-15`. Current theme is Gruvbox-inspired dark 
 
 ## Performance Characteristics
 
-- Single HTML file, no routing or lazy loading needed
+- Single HTML file with inlined critical CSS in `<head>`
+- Self-hosted fonts with `font-display: optional` for instant text rendering
+- Preloaded fonts and CSS for faster initial paint
 - CSS efficient selectors, minimal specificity
-- `IntersectionObserver` for performant scroll animations
-- Only external dependency: Google Fonts (Fira Code)
+- `IntersectionObserver` for performant scroll animations (15% threshold)
+- Passive event listeners on scroll/resize
+- Cached section offsets to prevent layout thrashing
 - `scroll-behavior: smooth` via CSS
+- No build tools, no JavaScript frameworks, no external CDN dependencies
 
 ## File Structure
 ```
 .
-├── index.html      # Single-page application
-├── styles.css      # All styling (terminal theme, responsive)
-├── script.js       # Navigation, animations, scroll effects
-├── resume.md       # Resume content (not rendered on site)
-└── CLAUDE.md       # This file
+├── fonts/
+│   ├── fira-code-latin.woff2
+│   └── fira-code-symbols.woff2
+├── index.html          # Single-page application
+├── styles.css          # All styling (terminal theme, responsive, light/dark)
+├── script.js           # Navigation, animations, theme toggle, scroll effects
+├── resume.md           # Resume content (not rendered on site)
+├── .vercelignore       # Vercel deployment config
+└── CLAUDE.md           # This file
 ```
+
+## Deployment
+
+Configured for Vercel deployment (`.vercelignore` present). No build step required - deploys directly.
