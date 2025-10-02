@@ -1,3 +1,6 @@
+# Self-hosted fonts (override global gitignore)
+!fonts/*.woff2
+
 # Dependencies
 node_modules/
 npm-debug.log*

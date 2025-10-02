@@ -59,12 +59,16 @@ navLinks.forEach(link => {
 
 // cache section offsets to avoid forced reflows on scroll
 let sectionOffsets = [];
+let lastWidth = window.innerWidth;
 
 const cacheSectionOffsets = () => {
-    sectionOffsets = sections.map(section => ({
-        id: section.id,
-        top: section.offsetTop
-    }));
+    // batch all layout reads in a single frame
+    requestAnimationFrame(() => {
+        sectionOffsets = sections.map(section => ({
+            id: section.id,
+            top: section.offsetTop
+        }));
+    });
 };
 
 const setActiveNav = () => {
@@ -84,22 +88,24 @@ const setActiveNav = () => {
     }
 };
 
-// initialize cached offsets after fonts load to avoid forced reflow
+// initialize cached offsets after fonts load
 document.fonts.ready.then(() => {
-    requestAnimationFrame(() => {
-        cacheSectionOffsets();
-        setActiveNav();
-    });
+    cacheSectionOffsets();
+    requestAnimationFrame(setActiveNav);
 });
 
-// recalculate on resize (debounced)
+// recalculate on resize only if width changed (avoids mobile scroll resize)
 let resizeTimeout;
 window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(cacheSectionOffsets, 150);
-});
+    const newWidth = window.innerWidth;
+    if (Math.abs(newWidth - lastWidth) > 5) {
+        lastWidth = newWidth;
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(cacheSectionOffsets, 150);
+    }
+}, { passive: true });
 
-window.addEventListener('scroll', setActiveNav);
+window.addEventListener('scroll', setActiveNav, { passive: true });
 
 const typedName = document.getElementById('typed-name');
 
