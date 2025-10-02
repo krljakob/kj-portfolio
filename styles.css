@@ -213,7 +213,8 @@ a:focus {
 }
 
 .nav-link.external {
-    color: var(--accent);
+    color: var(--accent-hover);
+    font-weight: 500;
 }
 
 .theme-toggle {
@@ -396,6 +397,7 @@ a:focus {
     font-family: var(--font);
     line-height: 1.5;
     font-weight: 400;
+    min-height: 2.1rem;
 }
 
 #typed-name::after {
@@ -959,6 +961,7 @@ a:focus {
 
     .hero-tagline {
         font-size: 1.1rem;
+        min-height: 1.65rem;
     }
 
     .expertise-grid {

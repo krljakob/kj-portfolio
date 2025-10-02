@@ -59,14 +59,17 @@ navLinks.forEach(link => {
 
 // cache section offsets to avoid forced reflows on scroll
 let sectionOffsets = [];
-let lastWidth = window.innerWidth;
+let lastWidth = 0;
 
 const cacheSectionOffsets = () => {
-    // batch all layout reads synchronously before any paint
-    sectionOffsets = sections.map(section => ({
-        id: section.id,
-        top: section.offsetTop
-    }));
+    // use requestAnimationFrame to batch layout reads
+    requestAnimationFrame(() => {
+        lastWidth = window.innerWidth;
+        sectionOffsets = sections.map(section => ({
+            id: section.id,
+            top: section.offsetTop
+        }));
+    });
 };
 
 const setActiveNav = () => {
@@ -104,12 +107,15 @@ if (document.readyState === 'loading') {
 // recalculate on resize only if width changed (avoids mobile scroll resize)
 let resizeTimeout;
 window.addEventListener('resize', () => {
-    const newWidth = window.innerWidth;
-    if (Math.abs(newWidth - lastWidth) > 5) {
-        lastWidth = newWidth;
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(cacheSectionOffsets, 150);
-    }
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        requestAnimationFrame(() => {
+            const newWidth = window.innerWidth;
+            if (Math.abs(newWidth - lastWidth) > 5) {
+                cacheSectionOffsets();
+            }
+        });
+    }, 150);
 }, { passive: true });
 
 window.addEventListener('scroll', setActiveNav, { passive: true });
