@@ -84,8 +84,13 @@ const setActiveNav = () => {
     }
 };
 
-// initialize cached offsets
-cacheSectionOffsets();
+// initialize cached offsets after fonts load to avoid forced reflow
+document.fonts.ready.then(() => {
+    requestAnimationFrame(() => {
+        cacheSectionOffsets();
+        setActiveNav();
+    });
+});
 
 // recalculate on resize (debounced)
 let resizeTimeout;
@@ -95,7 +100,6 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('scroll', setActiveNav);
-setActiveNav();
 
 const typedName = document.getElementById('typed-name');
 
