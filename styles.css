@@ -503,21 +503,22 @@ a:focus {
 /* === About === */
 .about-body {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
 }
 
 .about-text {
-    padding-right: 1rem;
-    border-right: 1px solid rgba(129, 140, 248, 0.15);
+    display: grid;
+    gap: 3rem;
+}
+
+.about-meta {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(129, 140, 248, 0.15);
 }
 
 @media (max-width: 860px) {
-    .about-text {
-        border-right: none;
-        border-bottom: 1px solid rgba(129, 140, 248, 0.15);
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
+    .about-meta {
+        padding-bottom: 1.5rem;
     }
 }
 
