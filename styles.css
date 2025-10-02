@@ -3,9 +3,9 @@
     --bg-alt: #252838;
     --bg-soft: #2d3142;
     --border: #3d4155;
-    --text: #e4e4e7;
-    --text-muted: #b4b9c5;
-    --text-light: #f3f4f6;
+    --text: #f3f4f6;
+    --text-muted: #d1d5db;
+    --text-light: #f9fafb;
     --accent: #50fa7b;
     --accent-hover: #69ff94;
     --accent-soft: #50fa7b;
@@ -385,6 +385,8 @@ a:focus {
     margin: 0;
     letter-spacing: -0.03em;
     line-height: 1.1;
+    min-height: 4.4rem;
+    display: block;
 }
 
 .hero-tagline {
@@ -952,6 +954,7 @@ a:focus {
 @media (max-width: 768px) {
     .hero-name {
         font-size: 2.5rem;
+        min-height: 2.75rem;
     }
 
     .hero-tagline {
@@ -998,6 +1001,7 @@ a:focus {
 
     .hero-name {
         font-size: 2rem;
+        min-height: 2.2rem;
     }
 
     .btn {

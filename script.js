@@ -62,13 +62,11 @@ let sectionOffsets = [];
 let lastWidth = window.innerWidth;
 
 const cacheSectionOffsets = () => {
-    // batch all layout reads in a single frame
-    requestAnimationFrame(() => {
-        sectionOffsets = sections.map(section => ({
-            id: section.id,
-            top: section.offsetTop
-        }));
-    });
+    // batch all layout reads synchronously before any paint
+    sectionOffsets = sections.map(section => ({
+        id: section.id,
+        top: section.offsetTop
+    }));
 };
 
 const setActiveNav = () => {
@@ -88,11 +86,20 @@ const setActiveNav = () => {
     }
 };
 
-// initialize cached offsets after fonts load
-document.fonts.ready.then(() => {
-    cacheSectionOffsets();
-    requestAnimationFrame(setActiveNav);
-});
+// initialize cached offsets after layout is stable
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        document.fonts.ready.then(() => {
+            cacheSectionOffsets();
+            setActiveNav();
+        });
+    });
+} else {
+    document.fonts.ready.then(() => {
+        cacheSectionOffsets();
+        setActiveNav();
+    });
+}
 
 // recalculate on resize only if width changed (avoids mobile scroll resize)
 let resizeTimeout;
