@@ -1,3 +1,30 @@
+// theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+const getTheme = () => localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+
+const setTheme = theme => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+};
+
+setTheme(getTheme());
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+    });
+}
+
+prefersDark.addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+    }
+});
+
 const navToggle = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -76,24 +103,6 @@ if (typedName) {
     };
 
     setTimeout(type, 300);
-}
-
-const contactForm = document.querySelector('.contact-form');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', event => {
-        event.preventDefault();
-        const formData = new FormData(contactForm);
-        const values = ['name', 'email', 'subject', 'message'].map(key => formData.get(key)?.toString().trim());
-
-        if (values.some(value => !value)) {
-            alert('Please fill in all fields before sending.');
-            return;
-        }
-
-        alert('Thank you for your message. I\'ll get back to you soon.');
-        contactForm.reset();
-    });
 }
 
 const terminalWindows = document.querySelectorAll('.terminal-window');

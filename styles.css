@@ -12,6 +12,92 @@
     --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
     --font: 'Fira Code', 'FiraCode Nerd Font', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
     --font-sans: 'Fira Code', 'FiraCode Nerd Font', ui-monospace, monospace;
+
+    --bg-gradient-start: #282a36;
+    --bg-gradient-end: #44475a;
+    --nav-bg: rgba(9, 13, 18, 0.92);
+    --nav-toggle-bg: rgba(15, 21, 28, 0.75);
+    --terminal-window-bg: rgba(40, 40, 40, 0.8);
+    --terminal-header-bg: rgba(29, 32, 33, 0.95);
+    --expertise-bg: rgba(131, 165, 152, 0.08);
+    --expertise-border: rgba(131, 165, 152, 0.15);
+    --hover-bg: rgba(131, 165, 152, 0.15);
+    --hover-bg-strong: rgba(131, 165, 152, 0.12);
+    --hover-border: rgba(131, 165, 152, 0.25);
+    --card-bg: rgba(131, 165, 152, 0.1);
+    --card-border: rgba(131, 165, 152, 0.2);
+    --card-hover-bg: rgba(131, 165, 152, 0.15);
+    --card-hover-border: rgba(131, 165, 152, 0.3);
+    --focus-ring: rgba(131, 165, 152, 0.15);
+    --entry-bg: rgba(29, 32, 33, 0.5);
+    --entry-hover-border: rgba(131, 165, 152, 0.4);
+    --input-bg: rgba(29, 32, 33, 0.6);
+    --footer-bg: rgba(29, 32, 33, 0.9);
+    --nav-menu-mobile-bg: rgba(11, 16, 24, 0.95);
+
+    --btn-primary-bg: #50fa7b;
+    --btn-primary-text: #282a36;
+    --btn-primary-hover: #5af78e;
+    --btn-secondary-border: #ffb86c;
+    --btn-secondary-hover-bg: #ffb86c;
+    --btn-secondary-hover-text: #282a36;
+
+    --theme-icon-moon: #a78bfa;
+    --theme-icon-sun: #50fa7b;
+
+    --terminal-dot-red: #fb4934;
+    --terminal-dot-amber: #fabd2f;
+    --terminal-dot-green: #b8bb26;
+}
+
+[data-theme="light"] {
+    --bg: #fafafa;
+    --bg-alt: #f0f0f0;
+    --bg-soft: #e5e5e5;
+    --border: #cbd5e1;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --text-light: #334155;
+    --accent: #8b5cf6;
+    --accent-hover: #ec4899;
+    --accent-soft: #06b6d4;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    --bg-gradient-start: #fafafa;
+    --bg-gradient-end: #f0f0f0;
+    --nav-bg: rgba(255, 255, 255, 0.92);
+    --nav-toggle-bg: rgba(240, 240, 240, 0.95);
+    --terminal-window-bg: rgba(255, 255, 255, 0.85);
+    --terminal-header-bg: rgba(245, 245, 245, 0.98);
+    --expertise-bg: rgba(139, 92, 246, 0.05);
+    --expertise-border: rgba(139, 92, 246, 0.15);
+    --hover-bg: rgba(139, 92, 246, 0.1);
+    --hover-bg-strong: rgba(139, 92, 246, 0.08);
+    --hover-border: rgba(139, 92, 246, 0.2);
+    --card-bg: rgba(139, 92, 246, 0.06);
+    --card-border: rgba(139, 92, 246, 0.15);
+    --card-hover-bg: rgba(139, 92, 246, 0.12);
+    --card-hover-border: rgba(139, 92, 246, 0.25);
+    --focus-ring: rgba(139, 92, 246, 0.2);
+    --entry-bg: rgba(255, 255, 255, 0.7);
+    --entry-hover-border: rgba(139, 92, 246, 0.35);
+    --input-bg: rgba(255, 255, 255, 0.8);
+    --footer-bg: rgba(250, 250, 250, 0.95);
+    --nav-menu-mobile-bg: rgba(255, 255, 255, 0.98);
+
+    --btn-primary-bg: #8b5cf6;
+    --btn-primary-text: #fafafa;
+    --btn-primary-hover: #7c3aed;
+    --btn-secondary-border: #ec4899;
+    --btn-secondary-hover-bg: #ec4899;
+    --btn-secondary-hover-text: #fafafa;
+
+    --theme-icon-moon: #7c3aed;
+    --theme-icon-sun: #f59e0b;
+
+    --terminal-dot-red: #ef4444;
+    --terminal-dot-amber: #f59e0b;
+    --terminal-dot-green: #10b981;
 }
 
 * {
@@ -26,13 +112,14 @@ html {
 
 body {
     font-family: var(--font);
-    background: linear-gradient(135deg, #282a36 0%, #44475a 100%);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'liga' 1, 'calt' 1;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -63,10 +150,11 @@ a:focus {
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(9, 13, 18, 0.92);
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-inner {
@@ -106,11 +194,58 @@ a:focus {
 .nav-link:focus,
 .nav-link.active {
     color: var(--text);
-    background: rgba(131, 165, 152, 0.15);
+    background: var(--hover-bg);
 }
 
 .nav-link.external {
     color: var(--accent);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--nav-toggle-bg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.25rem;
+    position: relative;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.theme-icon {
+    position: absolute;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.theme-icon-dark {
+    opacity: 0;
+    transform: rotate(-90deg);
+    color: var(--theme-icon-moon);
+}
+
+.theme-icon-light {
+    opacity: 1;
+    transform: rotate(0deg);
+    color: var(--theme-icon-sun);
+}
+
+[data-theme="light"] .theme-icon-dark {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-icon-light {
+    opacity: 0;
+    transform: rotate(90deg);
 }
 
 .nav-toggle {
@@ -120,9 +255,9 @@ a:focus {
     padding: 0.45rem 0.55rem;
     border-radius: 10px;
     border: 1px solid var(--border);
-    background: rgba(15, 21, 28, 0.75);
+    background: var(--nav-toggle-bg);
     cursor: pointer;
-    transition: border 0.2s ease;
+    transition: border 0.2s ease, background 0.3s ease;
 }
 
 .nav-toggle span {
@@ -133,18 +268,19 @@ a:focus {
 }
 
 .nav-toggle:hover {
-    border-color: var(--accent-strong);
+    border-color: var(--accent);
 }
 
 /* === Terminal Window === */
 .terminal-window {
-    background: rgba(40, 40, 40, 0.8);
+    background: var(--terminal-window-bg);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: var(--shadow);
     overflow: hidden;
     position: relative;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .terminal-window.reveal {
@@ -163,11 +299,12 @@ a:focus {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background: rgba(29, 32, 33, 0.95);
+    background: var(--terminal-header-bg);
     border-bottom: 1px solid var(--border);
     font-size: 0.875rem;
     color: var(--text-muted);
     font-family: var(--font);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .terminal-dot {
@@ -177,9 +314,9 @@ a:focus {
     border-radius: 50%;
 }
 
-.terminal-dot.red { background: #fb4934; }
-.terminal-dot.amber { background: #fabd2f; }
-.terminal-dot.green { background: #b8bb26; }
+.terminal-dot.red { background: var(--terminal-dot-red); }
+.terminal-dot.amber { background: var(--terminal-dot-amber); }
+.terminal-dot.green { background: var(--terminal-dot-green); }
 
 .terminal-path {
     margin-left: 0.75rem;
@@ -238,8 +375,8 @@ a:focus {
 
 .expertise-item {
     padding: 1rem 1.25rem;
-    background: rgba(131, 165, 152, 0.08);
-    border: 1px solid rgba(131, 165, 152, 0.15);
+    background: var(--expertise-bg);
+    border: 1px solid var(--expertise-border);
     border-radius: 6px;
     color: var(--text-light);
     font-family: var(--font);
@@ -247,8 +384,8 @@ a:focus {
 }
 
 .expertise-item:hover {
-    background: rgba(131, 165, 152, 0.12);
-    border-color: rgba(131, 165, 152, 0.25);
+    background: var(--hover-bg-strong);
+    border-color: var(--hover-border);
     transform: translateY(-2px);
 }
 
@@ -275,28 +412,28 @@ a:focus {
 }
 
 .btn-primary {
-    background: #50fa7b;
-    color: #282a36;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     font-weight: 600;
 }
 
 .btn-primary:hover {
-    background: #5af78e;
+    background: var(--btn-primary-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(80, 250, 123, 0.3);
-    color: #282a36;
+    color: var(--btn-primary-text);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--text-light);
-    border: 1px solid #ffb86c;
+    border: 1px solid var(--btn-secondary-border);
 }
 
 .btn-secondary:hover {
-    background: #ffb86c;
-    border-color: #ffb86c;
-    color: #282a36;
+    background: var(--btn-secondary-hover-bg);
+    border-color: var(--btn-secondary-border);
+    color: var(--btn-secondary-hover-text);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(255, 184, 108, 0.2);
 }
@@ -348,7 +485,7 @@ a:focus {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--muted);
+    color: var(--text-muted);
 }
 
 .about-meta dd {
@@ -358,7 +495,7 @@ a:focus {
 }
 
 .about-meta a {
-    color: var(--accent-strong);
+    color: var(--accent);
 }
 
 /* === Skills === */
@@ -388,8 +525,8 @@ a:focus {
 
 .skill-tag {
     padding: 0.5rem 0.75rem;
-    background: rgba(131, 165, 152, 0.1);
-    border: 1px solid rgba(131, 165, 152, 0.2);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 4px;
     font-size: 0.875rem;
     color: var(--text-light);
@@ -398,8 +535,8 @@ a:focus {
 }
 
 .skill-tag:hover {
-    background: rgba(131, 165, 152, 0.15);
-    border-color: rgba(131, 165, 152, 0.3);
+    background: var(--card-hover-bg);
+    border-color: var(--card-hover-border);
     transform: translateY(-1px);
 }
 
@@ -413,14 +550,14 @@ a:focus {
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--border);
-    background: rgba(29, 32, 33, 0.5);
+    background: var(--entry-bg);
     backdrop-filter: blur(8px);
     transition: all 0.2s ease;
 }
 
 .portfolio-entry:hover {
     transform: translateY(-2px);
-    border-color: rgba(131, 165, 152, 0.4);
+    border-color: var(--entry-hover-border);
     box-shadow: var(--shadow);
 }
 
@@ -463,8 +600,8 @@ a:focus {
 .tech-stack li {
     padding: 0.4rem 0.75rem;
     border-radius: 4px;
-    background: rgba(131, 165, 152, 0.1);
-    border: 1px solid rgba(131, 165, 152, 0.2);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     font-size: 0.875rem;
     color: var(--text-light);
     font-family: var(--font);
@@ -501,9 +638,10 @@ a:focus {
 .experience-entry {
     padding: 2rem;
     border-radius: 8px;
-    background: rgba(29, 32, 33, 0.5);
+    background: var(--entry-bg);
     border-left: 3px solid var(--accent);
     backdrop-filter: blur(8px);
+    transition: background 0.3s ease;
 }
 
 .experience-entry header {
@@ -582,7 +720,7 @@ a:focus {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    color: var(--muted-strong);
+    color: var(--text-muted);
 }
 
 .contact-list span {
@@ -610,7 +748,7 @@ a:focus {
 
 .contact-form input,
 .contact-form textarea {
-    background: rgba(29, 32, 33, 0.6);
+    background: var(--input-bg);
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 0.75rem 1rem;
@@ -623,7 +761,7 @@ a:focus {
 .contact-form textarea:focus {
     border-color: var(--accent);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(131, 165, 152, 0.15);
+    box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .contact-form textarea {
@@ -634,8 +772,9 @@ a:focus {
 .terminal-footer {
     padding: 3rem 1.25rem;
     border-top: 1px solid var(--border);
-    background: rgba(29, 32, 33, 0.9);
+    background: var(--footer-bg);
     backdrop-filter: blur(12px);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .terminal-footer .container {
@@ -696,12 +835,12 @@ a:focus {
         right: -100%;
         flex-direction: column;
         align-items: flex-start;
-        background: rgba(11, 16, 24, 0.95);
+        background: var(--nav-menu-mobile-bg);
         width: 220px;
         height: calc(100vh - 64px);
         padding: 1.5rem;
         border-left: 1px solid var(--border);
-        transition: right 0.3s ease;
+        transition: right 0.3s ease, background 0.3s ease;
     }
 
     .nav-menu.open {
