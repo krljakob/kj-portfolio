@@ -6,9 +6,9 @@
     --text: #e4e4e7;
     --text-muted: #b4b9c5;
     --text-light: #f3f4f6;
-    --accent: #818cf8;
-    --accent-hover: #a78bfa;
-    --accent-soft: #60a5fa;
+    --accent: #50fa7b;
+    --accent-hover: #69ff94;
+    --accent-soft: #50fa7b;
     --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 12px 25px -8px rgba(0, 0, 0, 0.4);
     --shadow-hover: 0 32px 64px -12px rgba(0, 0, 0, 0.9), 0 20px 40px -8px rgba(0, 0, 0, 0.5);
     --font: 'Fira Code', 'FiraCode Nerd Font', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
@@ -36,11 +36,11 @@
     --footer-bg: rgba(37, 40, 56, 0.9);
     --nav-menu-mobile-bg: rgba(26, 29, 41, 0.98);
 
-    --btn-primary-bg: #818cf8;
+    --btn-primary-bg: #50fa7b;
     --btn-primary-text: #1a1d29;
-    --btn-primary-hover: #6366f1;
-    --btn-secondary-border: #a78bfa;
-    --btn-secondary-hover-bg: #a78bfa;
+    --btn-primary-hover: #69ff94;
+    --btn-secondary-border: #50fa7b;
+    --btn-secondary-hover-bg: #50fa7b;
     --btn-secondary-hover-text: #1a1d29;
 
     --theme-icon-moon: #a78bfa;
@@ -59,9 +59,9 @@
     --text: #1e293b;
     --text-muted: #475569;
     --text-light: #334155;
-    --accent: #8b5cf6;
-    --accent-hover: #ec4899;
-    --accent-soft: #06b6d4;
+    --accent: #bd93f9;
+    --accent-hover: #9580d1;
+    --accent-soft: #bd93f9;
     --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     --bg-gradient-start: #fafafa;
@@ -70,28 +70,28 @@
     --nav-toggle-bg: rgba(240, 240, 240, 0.95);
     --terminal-window-bg: rgba(255, 255, 255, 0.85);
     --terminal-header-bg: rgba(245, 245, 245, 0.98);
-    --expertise-bg: rgba(139, 92, 246, 0.05);
-    --expertise-border: rgba(139, 92, 246, 0.15);
-    --hover-bg: rgba(139, 92, 246, 0.1);
-    --hover-bg-strong: rgba(139, 92, 246, 0.08);
-    --hover-border: rgba(139, 92, 246, 0.2);
-    --card-bg: rgba(139, 92, 246, 0.06);
-    --card-border: rgba(139, 92, 246, 0.15);
-    --card-hover-bg: rgba(139, 92, 246, 0.12);
-    --card-hover-border: rgba(139, 92, 246, 0.25);
-    --focus-ring: rgba(139, 92, 246, 0.2);
+    --expertise-bg: rgba(189, 147, 249, 0.08);
+    --expertise-border: rgba(189, 147, 249, 0.2);
+    --hover-bg: rgba(189, 147, 249, 0.12);
+    --hover-bg-strong: rgba(189, 147, 249, 0.15);
+    --hover-border: rgba(189, 147, 249, 0.25);
+    --card-bg: rgba(189, 147, 249, 0.08);
+    --card-border: rgba(189, 147, 249, 0.2);
+    --card-hover-bg: rgba(189, 147, 249, 0.15);
+    --card-hover-border: rgba(189, 147, 249, 0.3);
+    --focus-ring: rgba(189, 147, 249, 0.25);
     --entry-bg: rgba(255, 255, 255, 0.7);
-    --entry-hover-border: rgba(139, 92, 246, 0.35);
+    --entry-hover-border: rgba(189, 147, 249, 0.4);
     --input-bg: rgba(255, 255, 255, 0.8);
     --footer-bg: rgba(250, 250, 250, 0.95);
     --nav-menu-mobile-bg: rgba(255, 255, 255, 0.98);
 
-    --btn-primary-bg: #8b5cf6;
-    --btn-primary-text: #fafafa;
-    --btn-primary-hover: #7c3aed;
-    --btn-secondary-border: #ec4899;
-    --btn-secondary-hover-bg: #ec4899;
-    --btn-secondary-hover-text: #fafafa;
+    --btn-primary-bg: #bd93f9;
+    --btn-primary-text: #1a1d29;
+    --btn-primary-hover: #9580d1;
+    --btn-secondary-border: #bd93f9;
+    --btn-secondary-hover-bg: #bd93f9;
+    --btn-secondary-hover-text: #1a1d29;
 
     --theme-icon-moon: #7c3aed;
     --theme-icon-sun: #f59e0b;
