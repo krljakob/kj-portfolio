@@ -57,32 +57,42 @@ navLinks.forEach(link => {
     }
 });
 
-const setActiveNav = () => {
-    let activeId = sections[0]?.id;
-    const scrollY = window.scrollY;
+// cache section offsets to avoid forced reflows on scroll
+let sectionOffsets = [];
 
-    // batch DOM reads
-    const sectionOffsets = sections.map(section => ({
+const cacheSectionOffsets = () => {
+    sectionOffsets = sections.map(section => ({
         id: section.id,
         top: section.offsetTop
     }));
+};
 
-    const offset = scrollY + 160;
+const setActiveNav = () => {
+    let activeId = sections[0]?.id;
+    const offset = window.scrollY + 160;
 
-    // determine active section
     sectionOffsets.forEach(section => {
         if (offset >= section.top) {
             activeId = section.id;
         }
     });
 
-    // batch DOM writes
     navLookup.forEach(link => link.classList.remove('active'));
 
     if (activeId && navLookup.has(activeId)) {
         navLookup.get(activeId)?.classList.add('active');
     }
 };
+
+// initialize cached offsets
+cacheSectionOffsets();
+
+// recalculate on resize (debounced)
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(cacheSectionOffsets, 150);
+});
 
 window.addEventListener('scroll', setActiveNav);
 setActiveNav();
@@ -98,14 +108,14 @@ if (typedName) {
         if (index < text.length) {
             typedName.textContent += text.charAt(index);
             index += 1;
-            setTimeout(type, 60);
+            setTimeout(type, 50);
         }
     };
 
-    setTimeout(type, 300);
+    setTimeout(type, 100);
 }
 
-const terminalWindows = document.querySelectorAll('.terminal-window');
+const terminalWindows = document.querySelectorAll('.terminal-window:not(.visible)');
 
 if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(entries => {
