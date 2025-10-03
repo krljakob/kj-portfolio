@@ -480,11 +480,31 @@ a:focus {
 }
 
 .hero-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
     font-size: 0.95rem;
     margin-top: 1rem;
+}
+
+.link-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0.75rem;
+}
+
+.link-strip a + a {
+    margin-left: 1.25rem;
+    padding-left: 0.75rem;
+    position: relative;
+}
+
+.link-strip a + a::before {
+    content: '|';
+    color: var(--accent);
+    position: absolute;
+    left: -0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
 }
 
 .contact-link {
@@ -892,7 +912,7 @@ a:focus {
 
 .footer-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 0;
 }
 
 .footer-link {
